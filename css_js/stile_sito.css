@@ -145,6 +145,11 @@ button:focus {
         width: 100%;
     }
 }
+@media (max-width: 768px) {
+    #chi-siamo .col-md-6 {
+        transform: none; /* Elimina lo spostamento laterale su mobile */
+    }
+}
 
 @keyframes fadeInDown {
     from {
