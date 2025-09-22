@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+}
+
+.navbar {
+    padding: 1rem 2rem;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Il carosello occupa tutta la larghezza disponibile */
+}
+
+.carousel-image {
+    width: 100%; /* Adatta l'immagine alla larghezza del contenitore */
+    max-height: 95vh; /* Imposta un'altezza massima pari al 70% dell'altezza della finestra */
+    object-fit: cover; /* Ritaglia l'immagine per adattarsi senza deformarsi */
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Per garantire un'altezza proporzionata */
+.item {
+    position: relative;
+    width: 100%;
+}
+
+.info{
+    color: black;
+}
+
+.section {
+    padding: 4rem 2rem;
+}
+
+.section h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#chi-siamo .col-md-6 {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 1.5s ease forwards;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.card img:hover + .hover-image,
+.hover-image:hover {
+    opacity: 1;
+}
+
+.card-img-top, .hover-image {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1s ease forwards;
+}
+
+#newsletter-social {
+    background-color: #333;
+    color: #fff;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+.btn:hover {
+    background-color: #ffc107;
+    color: #000;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ffc107;
+}
+
+#privacy-info p {
+    color: black;  /* Imposta il colore del testo su nero */
+}
+
+@media (max-width: 768px) {
+    .carousel-image {
+        height: 300px;
+        width: 100%;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
